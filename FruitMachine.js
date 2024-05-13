@@ -1,4 +1,5 @@
 // Slot machine symbols and properties
+
 var symbols = ['🍒', '🍋', '🍇', '🍊', '🍉', '🍎', '💰']; // 💰 = Wild symbol
 
 var scatterSymbol = '🌟'; // Scatter symbol
@@ -17,6 +18,7 @@ var paylines = [ // Define paylines
 ];
 
 // Additional paylines
+
 var additionalPaylines = [
     
     // Additional paylines
@@ -27,6 +29,7 @@ var additionalPaylines = [
 ];
 
 // Additional symbols
+
 var additionalSymbols = ['🍒', '🍊', '🍇', '🍉']; 
 
 // Concatenate additional paylines and symbols
@@ -34,6 +37,7 @@ paylines = paylines.concat(additionalPaylines);
 symbols = symbols.concat(additionalSymbols);
 
 // Paytable with additional combinations
+
 var paytable = {
     '🍒🍒🍒': 100,
     '🍋🍋🍋': 200,
