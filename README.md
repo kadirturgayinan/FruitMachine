@@ -48,12 +48,19 @@ ALGORITHM
 The working algorithm of this slot machine simulation consists of the following steps:
 
 Define user information and game settings.
+
 Start the game loop.
+
 Show the user game information and take bets.
+
 Spin the slot machine and display the results.
+
 Calculate winnings and add them to the balance.
+
 Check for bonus rounds and jackpot wins, and add winnings to the balance.
+
 Check the player's balance and continue or end the game.
+
 The game loop ends when the user decides to quit the game or when their balance runs out.
 
 
