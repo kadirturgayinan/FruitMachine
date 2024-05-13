@@ -5,7 +5,9 @@
 Functioning:
 ---------------------------------------------
 
-This slot machine simulation allows the user to manage their balance, spin the slot machine based on a certain bet level and coin value, and keep track of their wins or losses. Below is a step-by-step explanation of how it works:
+This slot machine simulation allows the user to manage their balance, spin the slot machine based on a certain bet level and coin value, and keep track of their wins or losses.
+
+Below is a step-by-step explanation of how it works:
 
 
 
