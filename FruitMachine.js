@@ -1,11 +1,13 @@
 // Slot machine symbols and properties
 var symbols = ['🍒', '🍋', '🍇', '🍊', '🍉', '🍎', '💰']; // 💰 = Wild symbol
+
 var scatterSymbol = '🌟'; // Scatter symbol
 var megawaysEnabled = true; // Indicates whether Megaways feature is enabled
 var freeSpinEnabled = true; // Indicates whether Free Spin feature is enabled
 var spinGameEnabled = true; // Indicates whether Spin Game feature is enabled
 var jackpotEnabled = true; // Indicates whether Jackpot feature is enabled
 var gambleEnabled = true; // Indicates whether Gamble feature is enabled
+
 var paylines = [ // Define paylines
     [[0, 0], [0, 1], [0, 2]], // Top row
     [[1, 0], [1, 1], [1, 2]], // Middle row
@@ -16,6 +18,7 @@ var paylines = [ // Define paylines
 
 // Additional paylines
 var additionalPaylines = [
+    
     // Additional paylines
     [[0, 0], [1, 1], [0, 2]], // Diagonal from top left to bottom right
     [[2, 0], [1, 1], [2, 2]], // Diagonal from top right to bottom left
@@ -55,6 +58,7 @@ var paytable = {
 };
 
 // Player's balance, bet level, coin value, previous spin result, and bonus round count
+
 var balance = 1000; // Total amount of coins player has
 var betLevel = 1; // Bet level chosen by player
 var coinValue = 1; // Value of each coin
@@ -65,6 +69,7 @@ var bonusRoundResults = []; // Array to store bonus round results
 var jackpotAmount = 10000; // Jackpot amount
 
 // Game loop
+
 while (true) {
     // Display game information to the player
     console.log("Balance: " + balance + " coins");
@@ -88,6 +93,7 @@ while (true) {
     }
 
     // Spin the slot machine
+    
     var spinResult = [];
     if (megawaysEnabled) {
         var randomSymbolCount = Math.floor(Math.random() * symbols.length) + 1;
@@ -103,6 +109,7 @@ while (true) {
     }
 
     // Display spin result
+    
     console.log("Spinning the wheels...");
     console.log("Result: " + spinResult.join(' | '));
 
@@ -110,6 +117,7 @@ while (true) {
     previousSpinResult = spinResult.slice();
 
     // Calculate winnings
+    
     var winnings = calculateWinnings(spinResult, bet);
 
     // Update balance
@@ -117,6 +125,7 @@ while (true) {
     console.log("You won " + winnings + " coins!");
 
     // Check bonus round conditions
+    
     if (spinResult.includes(scatterSymbol) && freeSpinEnabled) {
         bonusRoundCount++;
         var bonusResult = playBonusRound();
@@ -127,6 +136,7 @@ while (true) {
     }
 
     // Check jackpot condition
+    
     if (jackpotEnabled && spinResult.includes('💰💰💰')) {
         console.log("Congratulations! You won the jackpot!");
         balance += jackpotAmount;
@@ -134,6 +144,7 @@ while (true) {
     }
 
     // Check player's balance
+    
     if (balance <= 0) {
         console.log("You ran out of coins. Game over!");
         break;
@@ -141,6 +152,7 @@ while (true) {
 }
 
 // Function to play bonus round
+
 function playBonusRound() {
     var bonusResult = [];
     for (var i = 0; i < 3; i++) {
@@ -151,6 +163,7 @@ function playBonusRound() {
 }
 
 // Function to calculate winnings
+
 function calculateWinnings(spinResult, bet) {
     var totalWinnings = 0;
     for (var i = 0; i < paylines.length; i++) {
